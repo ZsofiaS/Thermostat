@@ -1,21 +1,10 @@
-#temperature {
 
+.low-usage {
+  color: green;
 }
-#energyUsage {
-
+.medium-usage {
+  color: black;
 }
-#up {
-
-}
-#down {
-
-}
-#switchOnPowerSaving {
-
-}
-#switchOffPowerSaving {
-
-}
-#reset {
-  
+.high-usage {
+  color: red;
 }
