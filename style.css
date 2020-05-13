@@ -1,10 +1,56 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 7rem;
+  display: inline-block;
+}
+h2 {
+  font-size: 6rem;
+  transform: rotate(90deg);
+  color: white;
+  margin-top: 12rem;
+  margin-left: -8rem;
+}
+.left {
+  background-color: white;
+  text-align: right;
+  padding: 1rem;
+  height: 100%;
+}
+.right {
+  background-color: black;
+  padding: 2rem;
+  height: 100%;
+}
+.right img {
+  width: 10%;
+}
+.button {
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 5px 7px;
+  font-family: inherit;
+}
+.temperature-title {
 
+}
 .low-usage {
-  color: green;
+  color: #06623b;
 }
 .medium-usage {
   color: black;
 }
 .high-usage {
-  color: red;
+  color: #6f0000;
 }

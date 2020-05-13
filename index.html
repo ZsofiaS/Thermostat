@@ -3,18 +3,28 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <title>Thermostat</title>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+<title>Thermostat</title>
   </head>
   <body>
-    <section>
-      <h1 id='temperature'>Temperature</h1>
-      <p>Energy saving mode <span id='energyUsage'>on</span></p>
-      <button id='up' type="button" name="button">+</button>
-      <button id='down' type="button" name="button">-</button>
-      <button id='switchOffPowerSaving' type="button" name="button">Switch off Power Saving Mode</button>
-      <button id='switchOnPowerSaving' type="button" name="button">Switch on Power Saving Mode</button>
-      <button id='reset' type="button" name="button">Reset</button>
-    </section>
+    <div class="container">
+    <div class='left'>
+        <h1 id='temperature'>Temperature</h1>
+        <div class="temperature-controls">
+          <button class='button' id='up' type="button" name="button">+</button>
+          <button class='button' id='down' type="button" name="button">-</button>
+          <button class='button' id='reset' type="button" name="button">reset</button>
+        </div>
+        <p id='energy-saving'>Energy saving mode <span id='energyUsage'>on</span></p>
+        <button class='button' id='switchOffPowerSaving' type="button" name="button">Power Saving Mode ON</button>
+        <button class='button' id='switchOnPowerSaving' type="button" name="button">Power Saving Mode OFF</button>
+      </div>
+    <div class='right'>
+        <h2>degrees</h2>
+    </div>
+
+    </div>
+
     <script type="text/javascript" src="src/thermostat.js"></script>
     <script
         src="https://code.jquery.com/jquery-3.5.1.js"
