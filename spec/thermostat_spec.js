@@ -70,4 +70,10 @@ describe('Thermostat', function() {
       expect(thermostat.getMaximumTemperature()).toEqual(32);
     })
   })
+  describe('#reset', function() {
+    it('resets temperature to 20', function() {
+      thermostat.reset();
+      expect(thermostat.getTemperature()).toEqual(20);
+    })
+  })
 })

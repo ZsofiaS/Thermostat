@@ -2,40 +2,44 @@
 
 class Thermostat {
   constructor() {
-    this._temperature = 20;
-    this._MINTEMP = 10;
-    this._maxTemp = 25;
-    this._powerSavingModeOn = true;
+    this.DEFAULTTEMP = 20;
+    this.temperature = this.DEFAULTTEMP;
+    this.MINTEMP = 10;
+    this.maxTemp = 25;
+    this.powerSavingModeOn = true;
   }
   getTemperature() {
-    return this._temperature;
+    return this.temperature;
   }
   getMaximumTemperature() {
-    return this._maxTemp;
+    return this.maxTemp;
   }
   up() {
-    if (this._temperature >= this._maxTemp) {
+    if (this.temperature >= this.maxTemp) {
       return;
     }
-    this._temperature++;
+    this.temperature++;
   }
   down() {
-    if (this._temperature <= this._MINTEMP) {
+    if (this.temperature <= this.MINTEMP) {
       return;
     }
-    this._temperature--;
+    this.temperature--;
   }
   isPowerSavingModeOn() {
-    return this._powerSavingModeOn === true;
+    return this.powerSavingModeOn === true;
   }
   switchOff() {
-    this._maxTemp = 32;
-    console.log(this._maxTemp);
-    this._powerSavingModeOn = false;
+    this.maxTemp = 32;
+    console.log(this.maxTemp);
+    this.powerSavingModeOn = false;
   }
   switchOn() {
-    this._maxTemp = 25;
-      console.log(this._maxTemp);
-    this._powerSavingModeOn = true;
+    this.maxTemp = 25;
+      console.log(this.maxTemp);
+    this.powerSavingModeOn = true;
+  }
+  reset() {
+    this.temperature = this.DEFAULTTEMP;
   }
 }
