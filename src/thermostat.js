@@ -7,6 +7,8 @@ class Thermostat {
     this.MINTEMP = 10;
     this.maxTemp = 25;
     this.powerSavingModeOn = true;
+    this.MIN_ENERGY = 18;
+    this.MED_ENERGY = 25;
   }
   getTemperature() {
     return this.temperature;
@@ -41,9 +43,9 @@ class Thermostat {
     this.temperature = this.DEFAULTTEMP;
   }
   energyUsage() {
-    if (this.temperature < 18) {
+    if (this.temperature < this.MIN_ENERGY) {
       return 'low-usage';
-    } else if (this.temperature < 25) {
+    } else if (this.temperature < this.MED_ENERGY) {
       return 'medium-usage';
     } else {
       return 'high-usage';
