@@ -29,7 +29,7 @@ class Thermostat {
     this.temperature--;
   }
   isPowerSavingModeOn() {
-    return this.powerSavingModeOn === true;
+    return this.powerSavingModeOn;
   }
   switchOff() {
     this.maxTemp = 32;
