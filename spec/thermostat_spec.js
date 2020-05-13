@@ -6,10 +6,14 @@ describe('Thermostat', function() {
   })
 
   it('has a default temperature of 20', function() {
-    thermostat = new Thermostat();
     expect(thermostat.temperature()).toEqual(20);
   })
-
+  it('has a minimum temperature of 10', function() {
+    for (var i = 1; i <= 10; i++) {
+      thermostat.down();
+    }
+    expect(function() { thermostat.down(); }).toThrowError('Minimum temp reached');
+  })
 
   describe('#up', function() {
     it('can increase the temperature with an up function', function() {

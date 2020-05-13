@@ -9,6 +9,9 @@ class Thermostat {
     this._temperature++;
   }
   down() {
+    if (this._temperature <= 10) {
+      throw new Error('Minimum temp reached');
+    }
     this._temperature--;
   }
 }
