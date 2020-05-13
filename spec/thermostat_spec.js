@@ -76,4 +76,29 @@ describe('Thermostat', function() {
       expect(thermostat.getTemperature()).toEqual(20);
     })
   })
+  describe('it displays usage', function() {
+    it('displays low-usage if temp < 18', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.energyUsage()).toEqual('low-usage');
+    })
+    it('displays medium-usage if temp < 25', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('medium-usage');
+    })
+    it('displays high-usage otherwise', function() {
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.energyUsage()).toEqual('high-usage');
+    })
+
+  })
+
+
+
+
 })

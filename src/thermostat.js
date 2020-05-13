@@ -31,15 +31,23 @@ class Thermostat {
   }
   switchOff() {
     this.maxTemp = 32;
-    console.log(this.maxTemp);
     this.powerSavingModeOn = false;
   }
   switchOn() {
     this.maxTemp = 25;
-      console.log(this.maxTemp);
     this.powerSavingModeOn = true;
   }
   reset() {
     this.temperature = this.DEFAULTTEMP;
+  }
+  energyUsage() {
+    if (this.temperature < 18) {
+      return 'low-usage';
+    } else if (this.temperature < 25) {
+      return 'medium-usage';
+    } else {
+      return 'high-usage';
+    }
+    end;
   }
 }
