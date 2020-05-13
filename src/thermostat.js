@@ -5,4 +5,10 @@ class Thermostat {
   temperature() {
     return this._temperature;
   }
+  up() {
+    this._temperature++;
+  }
+  down() {
+    this._temperature--;
+  }
 }
