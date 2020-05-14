@@ -4,12 +4,13 @@
 // })
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  function updateTemperature() {
-    $('#temperature').text(thermostat.temperature);
-    $('#temperature').attr('class', thermostat.energyUsage());
-  }
 
   updateTemperature();
+
+  function updateTemperature() {
+    $('#temperature').text(thermostat.getTemperature());
+    $('#temperature').attr('class', thermostat.energyUsage());
+  }
 
   $('#up').on('click', function() {
     thermostat.up();
