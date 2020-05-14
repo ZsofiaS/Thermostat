@@ -2,12 +2,12 @@ require 'thermostat_db'
 
 describe Thermostat_db do
   describe '.read' do
-    xit 'reads data from database' do
+    it 'reads data from database' do
       data = Thermostat_db.save(temperature: '20', power_saving_mode: 'on', location: 'London')
-      all_data = Thermostat_db.read
-      expect(all_data.length).to eq 1
-      expect(all_data.first.temperature).to eq '20'
-      expect(all_data.first.location).to eq 'London'
+      p all_data = Thermostat_db.read()
+      expect(all_data).to be_a Thermostat_db
+      expect(all_data.temperature).to eq '20'
+      expect(all_data.location).to eq 'London'
     end
   end
 

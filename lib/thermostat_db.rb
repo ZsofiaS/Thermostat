@@ -16,7 +16,18 @@ class Thermostat_db
     else
       connection = PG.connect(dbname: 'thermostat')
     end
+    connection.exec("TRUNCATE data;")
     result = connection.exec("INSERT INTO data (temperature, power_saving_mode, location) VALUES('#{temperature}', '#{power_saving_mode}', '#{location}') RETURNING temperature, power_saving_mode, location;")
+    Thermostat_db.new(temperature: result[0]['temperature'], power_saving_mode: result[0]['power_saving_mode'], location: result[0]['location'])
+  end
+
+  def self.read()
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'thermostat_test')
+    else
+      connection = PG.connect(dbname: 'thermostat')
+    end
+    result = connection.exec("SELECT * FROM data;")
     Thermostat_db.new(temperature: result[0]['temperature'], power_saving_mode: result[0]['power_saving_mode'], location: result[0]['location'])
   end
 end
