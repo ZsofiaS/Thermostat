@@ -1,4 +1,5 @@
-require 'sinatra/base';
+require 'sinatra/base'
+require './lib/thermostat_db'
 
 class Thermostat < Sinatra::Base
   get '/' do
