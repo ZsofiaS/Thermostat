@@ -5,21 +5,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="javascript/src/thermostat.js"></script>
-    <script type="text/javascript" src="javascript/src/interface.js"></script>
-
     <title>Thermostat</title>
   </head>
   <body>
     <div class="container">
     <div class='left'>
         <h1 id='temperature'></h1>
+        <p>Temperature saved: <%= @data.temperature %></p>
+        <p>Power saving: <%= @data.power_saving_mode %></p>
+        <p>Location: <%= @data.location %></p>
         <div class="temperature-controls">
           <button class='button' id='up' type="button" name="button">+</button>
           <button class='button' id='down' type="button" name="button">-</button>
           <button class='button' id='reset' type="button" name="button">reset</button>
         </div>
-        <p id='energy-saving'>Energy saving mode <span id='energyUsage'>on</span></p>
+        <p id='energy-saving'>Energy saving mode <span id='energyUsage'><%= @data.power_saving_mode %></span></p>
         <button class='button' id='switchOffPowerSaving' type="button" name="button">Power Saving Mode OFF</button>
         <button class='button' id='switchOnPowerSaving' type="button" name="button">Power Saving Mode ON</button>
         <form action="/save" method="post">
@@ -28,13 +28,15 @@
           <input id='location_button' type="hidden" name="location" value="">
           <input type="submit" value="Save settings">
         </form>
+
       </div>
     <div class='right'>
         <h2>degrees</h2>
     </div>
     </div>
 
+    <script type="text/javascript" src="javascript/src/thermostat.js"></script>
+    <script type="text/javascript" src="javascript/src/interface.js"></script>
 
-    </script>
   </body>
 </html>

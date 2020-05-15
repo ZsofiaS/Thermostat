@@ -8,8 +8,8 @@ require 'capybara/rspec'
 require 'rspec';
 
 Capybara.app = Thermostat
-# Capybara.server = :puma, { Silent: true }
-# Capybara.default_driver = :selenium
+#Capybara.server = :puma, { Silent: true }
+Capybara.default_driver = :selenium
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
