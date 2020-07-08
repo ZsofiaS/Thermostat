@@ -1,6 +1,6 @@
 # Thermostat
 
-This is a Javascript & JQuery app T wrote during Week 5 at Makers Academy.  
+This is a Javascript & JQuery app I wrote during Week 5 at Makers Academy.  
 It models a thermostat, with the business logic written in Javascript, the dynamic visual interface in JQuery, and all this is running on Sinatra framework.
 Originally used Jasmine to TDD the app, and when I connected the frontend to Sinatra I added extra unit tests and feature tests using RSpec and Capybara.
 
