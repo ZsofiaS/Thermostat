@@ -3,7 +3,6 @@
 //   $('#temperature').text(thermostat.temperature);
 // })
 $(document).ready(function() {
-    console.log($('#energyUsage'));
   var thermostat = new Thermostat();
 
   updateTemperature();

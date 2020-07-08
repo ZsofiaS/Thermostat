@@ -4,6 +4,14 @@ class Thermostat {
   constructor() {
     this.DEFAULTTEMP = 20;
     this.temperature = this.DEFAULTTEMP;
+    // this.temperature = $.ajax({
+    //   cache: false,
+    //   type: 'GET',
+    //   url: '/save',
+    //   success: function(msg) {
+    //     console.log(msg);
+    //   }
+    // });
     this.MINTEMP = 10;
     this.maxTemp = 25;
     this.powerSavingModeOn = true;
@@ -11,6 +19,7 @@ class Thermostat {
     this.MED_ENERGY = 25;
   }
   getTemperature() {
+    // var this.temperature = <%= session[:temperature].to_json %>;
     return this.temperature;
   }
   getMaximumTemperature() {
